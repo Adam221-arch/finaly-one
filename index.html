@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قراءات التلوث</title>
+    <link rel="stylesheet" href="./ras.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>قراءات التلوث</h1>
+        <p>عرض مباشر لبيانات التلوث من الحساس</p>
+        <button id="theme-toggle">تبديل الوضع الليلي</button>
+    </header>
+
+    <main>
+        <!-- جدول البيانات -->
+        <div id="data-container">
+            <h2>البيانات الحالية:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>نوع الحساس</th>
+                        <th>القيمة</th>
+                        <th>الوحدة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>pH</td>
+                        <td id="ph-value">جاري التحميل...</td>
+                        <td>pH</td>
+                    </tr>
+                    <tr>
+                        <td>عكورة المياه (TDS)</td>
+                        <td id="tds-value">جاري التحميل...</td>
+                        <td>ppm</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- الرسم البياني -->
+        <div id="chart-container">
+            <h2>التغير في القراءات بمرور الوقت:</h2>
+            <canvas id="sensor-chart"></canvas>
+        </div>
+
+        <!-- زر تصدير البيانات -->
+        <button id="export-data">تصدير البيانات</button>
+    </main>
+
+    <footer>
+        <p>| Raspberry Pi - محافظة [اسم المحافظة]</p>
+    </footer>
+</body>
+
+</html>
